@@ -22,9 +22,9 @@ public class CreateCourierWithoutFieldsTest {
 
     @After
     public void tearDown() {
-        int statusCode = courierClient.loginCourier(new CourierCredentials(courier.login, courier.password)).extract().statusCode();
+        int statusCode = courierClient.loginCourier(new CourierCredentials(courier.getLogin(), courier.getPassword())).extract().statusCode();
         if (statusCode == 201) {
-            int courierId = courierClient.loginCourier(new CourierCredentials(courier.login, courier.password)).extract().path("id");
+            int courierId = courierClient.loginCourier(new CourierCredentials(courier.getLogin(), courier.getPassword())).extract().path("id");
             courierClient.deleteCourier(courierId);
         }
     }

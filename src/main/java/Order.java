@@ -1,22 +1,24 @@
 import com.github.javafaker.Faker;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @AllArgsConstructor
+@Data
 public class Order {
 
-    public String firstName;
-    public String lastName;
-    public String address;
-    public String metroStation;
-    public String phone;
-    public int rentTime;
-    public Date deliveryDate;
-    public String comment;
-    public List<String> color;
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String metroStation;
+    private String phone;
+    private int rentTime;
+    private Date deliveryDate;
+    private String comment;
+    private List<String> color;
 
     static Faker faker = new Faker();
 

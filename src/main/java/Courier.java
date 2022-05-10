@@ -10,9 +10,9 @@ import org.apache.commons.lang3.RandomStringUtils;
 @ToString
 public class Courier {
 
-    public String login;
-    public String password;
-    public String firstName;
+    private String login;
+    private String password;
+    private String firstName;
 
 
     public Courier setLogin(String login) {

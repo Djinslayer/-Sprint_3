@@ -8,8 +8,8 @@ import org.apache.commons.lang3.RandomStringUtils;
 @AllArgsConstructor
 public class CourierCredentials {
 
-    public String login;
-    public String password;
+    private String login;
+    private String password;
 
     public CourierCredentials setLogin(String login) {
         this.login = login;
@@ -22,23 +22,23 @@ public class CourierCredentials {
     }
 
     public static CourierCredentials from(Courier courier) {
-        return new CourierCredentials(courier.login, courier.password);
+        return new CourierCredentials(courier.getLogin(), courier.getPassword());
     }
 
     public static CourierCredentials courierLoginWithoutLogin(Courier courier) {
-        return new CourierCredentials().setPassword(courier.password);
+        return new CourierCredentials().setPassword(courier.getPassword());
     }
 
     public static CourierCredentials courierLoginWithoutPassword(Courier courier) {
-        return new CourierCredentials().setLogin(courier.login);
+        return new CourierCredentials().setLogin(courier.getLogin());
     }
 
     public static CourierCredentials courierLoginWithWrongLogin(Courier courier) {
-        return new CourierCredentials().setLogin(RandomStringUtils.randomAlphabetic(10)).setPassword(courier.password);
+        return new CourierCredentials().setLogin(RandomStringUtils.randomAlphabetic(10)).setPassword(courier.getPassword());
     }
 
     public static CourierCredentials courierLoginWithWrongPassword(Courier courier) {
-        return new CourierCredentials().setLogin(courier.login).setPassword(RandomStringUtils.randomAlphabetic(10));
+        return new CourierCredentials().setLogin(courier.getLogin()).setPassword(RandomStringUtils.randomAlphabetic(10));
     }
 
     public static CourierCredentials courierLoginWithWrongLoginPassword(Courier courier) {
